@@ -1,0 +1,8 @@
+<h1>Available Files</h1>
+<input type="test" [(ngModel)]="newFileTitle">
+<button (click)="createFile()">CREATE NEW FILE</button>
+<div *ngFor="let file of availableFiles">
+    <h2>{{file.title}}</h2>
+    <button (click)="editFile(file)">EDIT</button>
+    <button (click)="deleteFile(file)">DELETE</button>
+</div>
