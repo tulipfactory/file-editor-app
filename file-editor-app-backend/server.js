@@ -12,6 +12,7 @@ const fs = require("fs");
 
 
 //get the list of available files
+
 app.get("/files", (request, response)=>{
     let availableFilesAsJson = [];
     //find all files in the available-files folder
@@ -29,6 +30,7 @@ app.get("/files", (request, response)=>{
 
 });
 //Get a specific file
+
 app.get("files/:fileID", (request, response)=>{
     fileIDWeAreLookingFor = request.params.fileID;
     //find all files in the available-files folder
@@ -84,7 +86,7 @@ app.put("/files/:fileID", (request, response)=>{
 
 });
 //Delete a file
-app.delete("files/:fileID", (request, response)=>{
+app.delete("/files/:fileID", (request, response)=>{
     let fileIDWeAreLookingFor = request.params.fileID;
     //path for the file we're looking for (example :
     //available-files/12345.json)

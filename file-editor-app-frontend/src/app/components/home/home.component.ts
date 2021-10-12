@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.fileService .getAvailableFiles().subscribe(response=>{
       this.availableFiles = response as any[];
+      console.log(this.availableFiles)
     });
   }
 
@@ -49,6 +50,7 @@ export class HomeComponent implements OnInit {
 
   }
   deleteFile = (file:any) => {
+    console.log(file)
     this.fileService.deleteFile(file.fileID).subscribe(response=>{
       //remove file from available files array after deletion in the backend
       this.availableFiles.splice(this.availableFiles.indexOf(file), 1);
