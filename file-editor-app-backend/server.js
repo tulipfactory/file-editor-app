@@ -31,10 +31,10 @@ app.get("/files", (request, response)=>{
 });
 //Get a specific file
 
-app.get("files/:fileID", (request, response)=>{
-    fileIDWeAreLookingFor = request.params.fileID;
+app.get("/files/:fileID", (request, response)=>{
+    let fileIDWeAreLookingFor = request.params.fileID;
     //find all files in the available-files folder
-    let availableFilesAsBinary = fs.redaddirSync('available-files');
+    let availableFilesAsBinary = fs.readdirSync('available-files');
     //go through each file found
     availableFilesAsBinary.forEach(file=> {
         let fileAsBinary = fs.readFileSync('available-files/' + file);
